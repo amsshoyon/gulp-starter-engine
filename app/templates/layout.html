@@ -1,0 +1,30 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="assets/images/icon.png">
+    <link rel='shortcut icon' type='image/x-icon' href='assets/images/favicon.ico'/>
+    <title>gulp starter</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+
+  <body>
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+    {% block content %}{% endblock %}
+
+    {% include "partials/footer.html" %}
+
+    <!-- build:js assets/scripts/main.js -->
+    <script type="text/javascript" src="assets/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+    <!-- endbuild -->
+  </body>
+
+</html>

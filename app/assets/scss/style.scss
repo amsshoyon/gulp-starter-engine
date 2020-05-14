@@ -1,0 +1,34 @@
+/*===============================================================================*/
+/* Bootstrap 4 */
+/*===============================================================================*/
+@import "../vendor/bootstrap/scss/bootstrap-reboot";
+@import "../vendor/bootstrap/scss/bootstrap-grid";
+@import "../vendor/bootstrap/scss/bootstrap";
+
+/*===============================================================================*/
+/* Slick Slider */
+/*===============================================================================*/
+@import "../vendor/slick/slick.scss";
+@import "../vendor/slick/slick-theme.scss";
+
+// Reset Browser Defaults
+@import "base/normalize";
+
+// Core variables and mixins
+@import "base/variables";
+@import "base/mixins";
+
+// Dependencies
+@import "base/typography";
+@import "base/animation";
+
+// Layouts 
+@import "layout/colors";
+@import "layout/grid";
+@import "layout/spacing";
+@import "layout/common";
+@import "layout/header";
+@import "layout/footer";
+
+// Pages
+@import "pages/home";

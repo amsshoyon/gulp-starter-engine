@@ -1,0 +1,126 @@
+/*--------------------------------------------------------------
+#1.2 Typography
+--------------------------------------------------------------*/
+@font-face {
+    font-family: 'Maven Pro';
+    src: url('../fonts/MavenPro-SemiBold.woff2') format('woff2'),
+        url('../fonts/MavenPro-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maven Pro';
+    src: url('../fonts/MavenPro-Bold.woff2') format('woff2'),
+        url('../fonts/MavenPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maven Pro';
+    src: url('../fonts/MavenPro-Black.woff2') format('woff2'),
+        url('../fonts/MavenPro-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maven Pro';
+    src: url('../fonts/MavenPro-Medium.woff2') format('woff2'),
+        url('../fonts/MavenPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('../fonts/SFProText-Semibold.woff2') format('woff2'),
+        url('../fonts/SFProText-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+$font_primary: "Maven Pro";
+$font_secondary: "SF Pro Text";
+
+$base_font: 14;
+// Font Property
+// ==========================================================================
+
+
+html,
+body {
+    font-family: $font_primary;
+    font-size: $base_font + px;
+    line-height: 17px;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+h1 {
+    @include font(32);
+    line-height: 1.2;
+}
+
+h2 {
+    @include font(28);
+    line-height: 33px;
+    font-weight: 600;
+
+    @include mq("phone", min) {
+        @include font(35);
+        line-height: 40px;
+    }
+}
+
+h3 {
+    @include font(20);
+    line-height: 23px;
+    font-weight: 500;
+
+    @include mq("phone", min) {
+        @include font(30);
+        line-height: 35px;
+    }
+}
+
+h4 {
+    @include font(18);
+}
+
+h5 {
+    @include font(16);
+    line-height: 18px;
+}
+
+
+p {
+    @include font(14);
+    line-height: 17px;
+    font-weight: 500;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+a {
+    @include font(14);
+    line-height: 17px;
+    color: $primary;
+    font-weight: 500;
+}
