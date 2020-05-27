@@ -1,14 +1,14 @@
 {
-  "name": "@amsshoyon/gulp-starter-engine",
+  "name": "Bow City Storage",
   "version": "1.0.0",
-  "description": "Gulp starter package",
+  "description": "Bow City Storage",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Abdullah Al Mamun",
+  "author": "Bow City Storage",
   "repository ": {
-    "url": "git://github.com/amsshoyon/gulp-starter-engine.git"
+    "url": "https://github.com/amsshoyon/BOW-CITY.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

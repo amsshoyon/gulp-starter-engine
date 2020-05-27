@@ -9,7 +9,10 @@
     <link rel="apple-touch-icon" href="assets/images/icon.png">
     <link rel='shortcut icon' type='image/x-icon' href='assets/images/favicon.ico'/>
     <title>gulp starter</title>
+    <!-- build:css assets/css/all.css -->
+    <link rel="stylesheet" href="assets/css/vendor.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- endbuild -->
   </head>
 
   <body>
@@ -19,12 +22,12 @@
 
     {% block content %}{% endblock %}
 
-    {% include "partials/footer.html" %}
+    {% include "./footer.njk" %}
 
     <!-- build:js assets/scripts/main.js -->
     <script type="text/javascript" src="assets/vendor/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/script.js"></script>
     <!-- endbuild -->
+    <script type="text/javascript" src="assets/js/script.js"></script>
   </body>
 
 </html>

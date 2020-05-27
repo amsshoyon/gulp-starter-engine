@@ -20,19 +20,30 @@ const prettyHtml = require('gulp-pretty-html');
 // File Path Variables
 const files = {
     vendorPath: 'app/assets/vendor/**/*',
+    vendorSass: 'app/assets/vendor/**/*.scss',
     scssPath: 'app/assets/scss/**/*.scss',
     jsPath: 'app/assets/js/**/*.js',
     fontPath: 'app/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}',
     imagePath: 'app/assets/images/**/*',
     htmlPath: 'dist/**/*.html',
-    njkPath: 'app/**/*.+(html|nunjucks|njk)',
-    njkPages: 'app/pages/**/*.+(html|nunjucks|njk)',
+    njkPath: 'app/views/**/*.+(html|nunjucks|njk)',
+    njkPages: 'app/views/pages/**/*.+(html|nunjucks|njk)',
     webmanifestPath: 'app/site.webmanifest'
 }
 
 function webmanifest() {
     return src(files.webmanifestPath)
         .pipe(dest('dist'));
+}
+
+// Sass Vendor
+function vendorStyle() {
+    return src(files.vendorSass)
+        .pipe(sourcemaps.init())
+        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest('dist/assets/css'));
 }
 
 // Sass task
@@ -84,7 +95,7 @@ const cbString = new Date().getTime();
 function htmlTask() {
     return src(files.njkPages)
         .pipe(nunjucksRender({
-            path: ['app/templates']
+            path: ['app/views']
         }))
         .pipe(replace(/cb=\d+/g, 'cb=' + cbString))
         .pipe(prettyHtml({
@@ -147,6 +158,7 @@ function watchTask() {
 exports.default = series(
     parallel(webmanifest, scssTask, jsTask, fontTask, htmlTask),
     vendorMove,
+    vendorStyle,
     scssMove,
     imageTask,
     reload,
