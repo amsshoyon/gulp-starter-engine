@@ -1,14 +1,14 @@
 {
-  "name": "Bow City Storage",
+  "name": "base-template",
   "version": "1.0.0",
-  "description": "Bow City Storage",
+  "description": "gulp-base-template",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Bow City Storage",
+  "author": "Abdullah Al Mamun",
   "repository ": {
-    "url": "https://github.com/amsshoyon/BOW-CITY.git"
+    "url": "https://github.com/amsshoyon/gulp-starter-engine"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -31,5 +31,8 @@
     "gulp-uglify": "^3.0.2",
     "gulp-useref": "^4.0.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-if": "^3.0.0",
+    "gulp-nunjucks": "^5.1.0"
+  }
 }

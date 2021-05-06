@@ -1,0 +1,14 @@
+.preloader {
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s ease-in-out;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        overflow: visible;
+    }
+}

@@ -15,6 +15,7 @@ const imagemin = require('gulp-imagemin');
 const useref = require('gulp-useref');
 const nunjucksRender = require('gulp-nunjucks-render');
 const prettyHtml = require('gulp-pretty-html');
+const gulpif = require('gulp-if');
 
 
 // File Path Variables
@@ -25,25 +26,10 @@ const files = {
     jsPath: 'app/assets/js/**/*.js',
     fontPath: 'app/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}',
     imagePath: 'app/assets/images/**/*',
+    distImagePath: 'dist/assets/images/**/*',
     htmlPath: 'dist/**/*.html',
     njkPath: 'app/views/**/*.+(html|nunjucks|njk)',
     njkPages: 'app/views/pages/**/*.+(html|nunjucks|njk)',
-    webmanifestPath: 'app/site.webmanifest'
-}
-
-function webmanifest() {
-    return src(files.webmanifestPath)
-        .pipe(dest('dist'));
-}
-
-// Sass Vendor
-function vendorStyle() {
-    return src(files.vendorSass)
-        .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-        .pipe(postcss([autoprefixer(), cssnano()]))
-        .pipe(sourcemaps.write('.'))
-        .pipe(dest('dist/assets/css'));
 }
 
 // Sass task
@@ -56,10 +42,20 @@ function scssTask() {
         .pipe(dest('dist/assets/css'));
 }
 
-// Move Sass Files to dist For Client
-function scssMove() {
-    return src(files.scssPath)
-        .pipe(dest('dist/assets/sass'));
+// Vendor Sass task
+function vendorScssTask() {
+    return src(files.vendorSass)
+        .pipe(sourcemaps.init())
+        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest('dist/assets/css'));
+}
+
+// js task
+function jsTask() {
+    return src(files.jsPath)
+        .pipe(dest('dist/assets/js'));
 }
 
 // Move Vendor Files to dist For Client
@@ -68,20 +64,16 @@ function vendorMove() {
         .pipe(dest('dist/assets/vendor'));
 }
 
-// js task
-function jsTask() {
-    return src(files.jsPath)
-        // .pipe(sourcemaps.init())
-        .pipe(concat('script.js'))
-        // .pipe(uglify())
-        // .pipe(sourcemaps.write('.'))
-        .pipe(dest('dist/assets/js'));
+// Move Sass Files to dist For Client
+function scssMove() {
+    return src(files.scssPath)
+        .pipe(dest('dist/assets/sass'));
 }
 
-//Font Task
-function fontTask() {
-    return src(files.fontPath)
-        .pipe(dest('dist/assets/fonts'))
+//Clean Images
+function imageClean() {
+    return src('dist/assets/images/', { read: false, allowEmpty: true })
+        .pipe(clean({ force: true }))
 }
 
 //Image Task
@@ -108,47 +100,35 @@ function htmlTask() {
         .pipe(dest('dist'));
 }
 
-// browser Sync: To Initialize 
+// Combine Everything
+function combineTask() {
+    return src(files.htmlPath)
+        .pipe(useref())
+        .pipe(gulpif('*.js', uglify()))
+        .pipe(dest('dist'));
+}
+
+// browser Sync: To Initialize
 function serve(done) {
     browserSync.init({
+        port: 3001,
         server: {
-            baseDir: './dist'
+            baseDir: './dist',
         }
     });
     done();
 }
 
-// browser Sync: To Reload 
+// browser Sync: To Reload
 function reload(done) {
     browserSync.reload();
     done();
 }
 
-// Combine Everything
-function combineTask() {
-    return src(files.htmlPath)
-        .pipe(useref({ searchPath: './dist' }))
-        // .pipe(gulpif('*.js', uglify()))
-        // .pipe(gulpif('*.css', minifyCss()))
-        .pipe(dest('dist'));
-}
-
-// Clean Css Files
-function cleanCssTask() {
-    return gulp.src('./dist/assets/css', { read: false })
-        .pipe(clean());
-}
-
-// Clean Js Files
-function cleanJsTask() {
-    return gulp.src('./dist/assets/js', { read: false })
-        .pipe(clean());
-}
-
 // watch task
 function watchTask() {
-    watch([files.webmanifestPath, files.scssPath, files.jsPath, files.imagePath, files.njkPath],
-        parallel(webmanifest, scssTask, jsTask, fontTask, imageTask, htmlTask, reload)
+    watch([files.scssPath, files.jsPath, files.imagePath, files.njkPath],
+        parallel(scssTask, jsTask, imageTask, htmlTask, reload)
     );
 }
 
@@ -156,10 +136,10 @@ function watchTask() {
 // Default Tasks =======================================
 // #########################################################
 exports.default = series(
-    parallel(webmanifest, scssTask, jsTask, fontTask, htmlTask),
-    vendorMove,
-    vendorStyle,
+    vendorScssTask,
+    parallel(scssTask, jsTask, htmlTask),
     scssMove,
+    vendorMove,
     imageTask,
     reload,
     serve,
@@ -167,11 +147,7 @@ exports.default = series(
 );
 
 exports.combine = series(
-    combineTask,
-    cleanJsTask,
-    reload,
-    serve,
-    watchTask
+    combineTask
 );
 
 // #########################################################
@@ -200,4 +176,3 @@ gulp.task('clean', function () {
     return gulp.src('./dist', { read: false })
         .pipe(clean());
 });
-

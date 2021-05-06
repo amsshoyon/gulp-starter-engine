@@ -20,9 +20,11 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
+    {% import 'layouts/navigation.njk' %}
+
     {% block content %}{% endblock %}
 
-    {% include "./footer.njk" %}
+    {% include "layouts/footer.njk" %}
 
     <!-- build:js assets/scripts/main.js -->
     <script type="text/javascript" src="assets/vendor/jquery/jquery.min.js"></script>

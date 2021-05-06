@@ -1,22 +1,37 @@
 // color
 $white: #ffffff;
-$dark: #31353e;
 $black: #000000;
 
+$dark: #333333;
+$lightDark: #4F4F4F;
+
+$gray: #828282;
+$darkGray: #4C4C4C;
+$lightGray: #FAFAFA;
+
 // Theme Colors
-$primary: #3F56A1;
+$primaryColor: $black;
 
-$error: #C54338;
+$baseTextColor: $black;       
+$lightTextColor: #8c8c8c;       
 
-$text_color: #242528;
-$text_light: #92A0B7;
-$text_error: #C54338;
+$bodyBg: $white;
+$primaryBg: #f7f7f7;
+$footerBg: #FAFAFA;
 
-$primary_btn: #3F56A1;
-$secondary_btn: #3DD598;
+$border: #f0f0f0;
+$error: #FF3326;
 
-$input_bg: #F8FAFD;
-$placeholder: #92A0B7;
+$baseFontSize: 18;
+$fontPrimary: 'Roboto', sans-serif;
+$fontSecondary: 'Adobe Caslon Pro', sans-serif;
+$fontTitle: 'Adobe Caslon Pro', sans-serif;
 
-$border: #1B1C1E;
-$border_light: #F0F4F8;
+
+$sectionSpace : 75px;
+$sectionSpaceRes : 30px;
+
+$formElementHeight: 60px;
+$formElementHeightRes: 40px;
+
+$btnBorderRadius: 50px;
