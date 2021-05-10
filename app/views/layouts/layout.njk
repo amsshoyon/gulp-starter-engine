@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="assets/images/icon.png">
     <link rel='shortcut icon' type='image/x-icon' href='assets/images/favicon.ico'/>
     <title>gulp starter</title>
@@ -20,11 +19,11 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-    {% import 'layouts/navigation.njk' %}
+    {% include 'layouts/header.html' %}
 
     {% block content %}{% endblock %}
 
-    {% include "layouts/footer.njk" %}
+    {% include "layouts/footer.html" %}
 
     <!-- build:js assets/scripts/main.js -->
     <script type="text/javascript" src="assets/vendor/jquery/jquery.min.js"></script>
