@@ -5,7 +5,7 @@ const clean = require('gulp-clean');
 const browserSync = require('browser-sync').create();
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const concat = require('gulp-concat');
+const fs = require('fs');
 const postcss = require('gulp-postcss');
 const replace = require('gulp-replace');
 const sass = require('gulp-sass');
@@ -30,6 +30,7 @@ const files = {
     htmlPath: 'dist/**/*.html',
     njkPath: 'app/views/**/*.+(html|nunjucks|njk)',
     njkPages: 'app/views/pages/**/*.+(html|nunjucks|njk)',
+    manifest: './manifest.json'
 }
 
 // Sass task
@@ -70,12 +71,6 @@ function scssMove() {
         .pipe(dest('dist/assets/sass'));
 }
 
-//Clean Images
-function imageClean() {
-    return src('dist/assets/images/', { read: false, allowEmpty: true })
-        .pipe(clean({ force: true }))
-}
-
 //Image Task
 function imageTask() {
     return src(files.imagePath)
@@ -87,7 +82,12 @@ const cbString = new Date().getTime();
 function htmlTask() {
     return src(files.njkPages)
         .pipe(nunjucksRender({
-            path: ['app/views']
+            path: ['app/views'],
+            watch:true,
+            manageEnv:function(env){
+                var data = JSON.parse(fs.readFileSync(files.manifest));
+                env.addGlobal('site',data);
+            }
         }))
         .pipe(replace(/cb=\d+/g, 'cb=' + cbString))
         .pipe(prettyHtml({
@@ -127,7 +127,7 @@ function reload(done) {
 
 // watch task
 function watchTask() {
-    watch([files.scssPath, files.jsPath, files.imagePath, files.njkPath],
+    watch([files.manifest, files.scssPath, files.jsPath, files.imagePath, files.njkPath],
         parallel(scssTask, jsTask, imageTask, htmlTask, reload)
     );
 }
