@@ -1,0 +1,192 @@
+.form-group {
+    width: 100%;
+    position: relative;
+    margin-bottom: 24px;
+
+    &:before{
+        font: normal normal normal 24px/1 "Material Design Icons";
+        content: '\F1238';
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $error;
+        border-radius: 50%;
+        color: $white;
+        font-size: 14px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
+        padding: 5px;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .help-block{
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        font-size: rem(10);
+        color: $error;
+        left: 0;
+        bottom: -15px;
+    }
+
+    &.error {
+        &:before{
+            visibility: visible;
+            opacity: 1;
+        }
+        .form-label {
+            color: $error !important;
+        }
+        .form-control{
+            padding-right: 50px;
+            border-bottom: 2px solid $error !important;
+            color: $error !important;
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover, 
+            &:-webkit-autofill:focus, 
+            &:-webkit-autofill:active  {
+                -webkit-text-fill-color: $error !important;
+            }
+        }
+        .help-block{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &.focus{
+        .form-label{
+            color: $primaryColor;
+            font-weight: 500;
+            top: 0;
+            font-size: rem(10);
+            transform: translateY(-50%);
+        }
+        .form-control {
+            border-color: $primaryColor;
+        }
+    }
+
+    .form-label {
+        font-size: rem(15);
+        font-weight: 500; 
+        text-transform: uppercase;
+        line-height: 1;
+        color: #010101;
+        margin: 0;
+        padding: 0 5px;
+        cursor: pointer;
+        background-color: $white;
+        position: absolute;
+        top: 23px;
+        left: -5px;
+        transform: translateY(0);
+        transition: .3s ease-in-out;
+        z-index: 9;
+    }
+
+    .form-control {
+        width: 100%;
+        min-height: $formElementHeight;
+        border-radius: 4px;
+        background: #FFFFFF;
+        border: none;
+        border-bottom: 2px solid $border;
+        display: flex;
+        align-items: center;
+        padding: 8px 0px;
+        font-size: rem(16);
+        font-weight: 300;
+        outline: none;
+        color: $black;
+        font-weight: 500;
+        filter: none;
+        -moz-appearance:none; /* Firefox */
+        -webkit-appearance:none; /* Safari and Chrome */
+        appearance:none;
+
+        &.form-select{
+            background-image: url('../images/icons/arrow-down.svg');
+            background-size: 10px;
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+
+        &:focus{
+            outline: none;
+            box-shadow: none;
+            border-color: $primaryColor;
+        }
+
+        &::placeholder{
+            font-size: rem(18);
+            color: #8E8E93;
+            opacity: 1;
+        }
+
+        @media(max-width: 639px){
+            min-height: $formElementHeightRes;
+            padding: 5px 8px;
+        }
+
+        // &:-moz-autofill,
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover, 
+        &:-webkit-autofill:focus, 
+        &:-webkit-autofill:active  {
+            -webkit-box-shadow: 0 0 0 30px white inset !important;
+        }
+
+    }
+
+    [type='submit'] {
+        min-height: $formElementHeight;
+
+        @media (max-width: 639px){
+            min-height: $formElementHeightRes;
+        }
+    }
+
+}
+
+.radio-label {
+    position: relative;
+    padding-left: 60px;
+    cursor: pointer;
+    margin-bottom: 0;
+    
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &:before {
+        width: 30px;
+        height: 30px;
+        background-color: #ededed;
+        left: 0;
+    }
+    &:after {
+        width: 18px;
+        height: 18px;
+        background-color: #ededed;
+        left: 6px;
+    }
+}
+
+.radio-input {
+    display: none;
+}
+
+.radio-input:checked+.radio-label:after {
+    background-color: #000;
+}
