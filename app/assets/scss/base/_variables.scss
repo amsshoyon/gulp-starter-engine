@@ -8,9 +8,10 @@ $lightDark: #4F4F4F;
 $gray: #828282;
 $darkGray: #4C4C4C;
 $lightGray: #FAFAFA;
+$gray2: #4F4F4F;
 
 // Theme Colors
-$primaryColor: $black;
+$primaryColor: #C19676;
 
 $baseTextColor: $black;       
 $lightTextColor: #8c8c8c;       
@@ -20,11 +21,11 @@ $primaryBg: #f7f7f7;
 $footerBg: #FAFAFA;
 
 $border: #f0f0f0;
-$error: #FF3326;
+$error: #FF3326; 
 
 $baseFontSize: 16;
-$bodyFont: 'Gellix', sans-serif;;
-$primaryFont: 'Epilogue', sans-serif;
+$bodyFont: 'Source Sans Pro', sans-serif;
+$primaryFont: 'Optima nova LT Pro', sans-serif;
 
 
 $sectionSpace : 75px;
@@ -34,3 +35,5 @@ $formElementHeight: 60px;
 $formElementHeightRes: 40px;
 
 $btnBorderRadius: 50px;
+
+$ancorTransition: .2s ease-in-out;

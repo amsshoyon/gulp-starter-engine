@@ -1,63 +1,76 @@
 /*--------------------------------------------------------------
 #2.5 Site Header
 --------------------------------------------------------------*/
-$headerHeight: 72px;
 
 .site-header {
     background-color: $white;
     transition: .3s ease-in-out;
+    border-bottom: 1px solid #E0E0E0;
     &.shadow{
         box-shadow: 0 4px 4px rgba(0,0,0,.15);
-        .nav-content{
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
     }
     
-    .site-nav{
-        min-height: $headerHeight;
-        width: 100%;
-
-        @media(max-width: 767px){
-            min-height: 60px;
-        }
-    }
-
     .nav-content{
         position: relative;
-        padding-top: 40px;
-        padding-bottom: 40px;
         transition: .3s ease-in-out;
-        @media(max-width: 1247px){
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
+        min-height: 60px;
     }
 }
 
 .site-logo{
     display: block;
+    @media(min-width:1024px){
+        margin-right: 98px;
+    }
     img{
-        width: auto;
-        height: 50px;
-        @media (max-width: 767px) {
-            height: 25px;
+        max-width: 128px;
+    }
+}
+
+.menu-link {
+    font-size: rem(18);
+    color: $gray2;
+    display: block;
+    position: relative;
+    padding: 26px 0;
+    transition: $ancorTransition;
+
+    @media(max-width:1247px){
+        font-size: rem(16);
+    }
+    @media(max-width: 1024px){
+        font-size: rem(18);
+        padding: 0;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: $primaryColor;
+        left: 0;
+        bottom: 0;
+        transform: scale(0);
+        transition: $ancorTransition;
+    }
+    &:hover {
+        color: $primaryColor;
+        &:after{
+            transform: scale(1);
         }
     }
+    &.menu-icon{
+        font-size: rem(24);
+    }
+
 }
 
 .menu-area{
     display: flex;
     align-items: center;
-    font-weight: 500;
-    line-height: 24px;
-    font-size: rem(18);
-    @media(max-width:1247px){
-        font-size: rem(16);
-    }
     
-    @media(max-width: 767px){
-        font-size: rem(24);
+    @media(max-width: 1024px){
         position: fixed;
         top: 60px;
         right: 0;
@@ -66,7 +79,7 @@ $headerHeight: 72px;
         width: 100%;
         height: calc(100vh - 60px);
         z-index: 9999;
-        padding: 50px 20px;
+        padding: 50px 10px;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
@@ -83,7 +96,7 @@ $headerHeight: 72px;
         align-items: center;
         justify-content: center;
         list-style: none;
-        @media(max-width: 767px){
+        @media(max-width: 1024px){
             flex-direction: column;
             align-items: flex-start;
             margin-bottom: 24px;
@@ -94,35 +107,46 @@ $headerHeight: 72px;
             @media(max-width:1247px){
                 margin-left: 30px;
             }
-            @media(max-width:990px){
-                margin-left: 20px;
-            }
-            @media(max-width: 767px){
+            @media(max-width: 1024px){
                 margin-right: 0;
                 margin-bottom: 12px;
                 margin-left: 0;
                 width: 100%;
             }
-            &>a{
-                color: $black;
-                display: block;
-                position: relative;
-                padding: 5px 0;
-               
-                &.menu-icon{
-                    font-size: rem(24);
-                }
+        }
+    }
+}
+
+.user-menu-area{
+    margin-left: 122px;
+    @media(max-width: 1024px){
+        margin-left: 0px;
+        order: -1;
+    }
+    .menus {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        li{
+            margin-right: 46px;
+            @media(max-width: 1024px){
+                margin-right: 15px;
+            }
+            &:last-child{
+                margin-right: 0;
             }
         }
     }
 }
 
+//=======================================
+// Toggler =============================
 .menu-toggler{
     width: 20px;
     position: relative;
     overflow: hidden;
 
-    @media(min-width: 768px){
+    @media(min-width: 1024px){
         display: none;
     }
 
@@ -192,7 +216,8 @@ $headerHeight: 72px;
     }
 }
 
-
+//=======================================
+// Dropdown =============================
 .dropdown {
     .dropdown-menus {
         @media(min-width: 768px){
@@ -207,7 +232,7 @@ $headerHeight: 72px;
             background-color: #fff;
         }
 
-        @media(max-width: 767px){
+        @media(max-width: 1024px){
             display: none;
             background-color: #fafafa;
             width: 100%;
@@ -233,8 +258,46 @@ $headerHeight: 72px;
     } 
 
     &>.dropdown-menus.show {
-        @media(max-width: 767px){
+        @media(max-width: 1024px){
             max-height: 500px;
         }
     } 
+}
+
+// magamenu
+// ======================================
+.megamenu-dropdown{
+    position: relative;
+    @media(max-width: 1024px){
+        display: none;
+    }
+    &:hover .mega-menu{
+        transform: translateY(0px);
+        opacity: 1;
+        visibility: visible;
+    }
+    .mega-menu{
+        position: absolute;
+        top: 100%;
+        left: -77px;
+        transform: translateY(15px);
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s ease-in-out;
+        .content {
+            width: 636px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #fff;
+            padding: 14px 77px  48px;
+            border: 1px solid #E0E0E0;
+            ul{
+                list-style: none;
+                padding-left: 0;
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
 }

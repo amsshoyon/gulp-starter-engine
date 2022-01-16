@@ -15,6 +15,12 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 } 
 
+ol, ul {
+    margin-bottom: 0;
+}
+.fit-content{
+    width: fit-content;
+}
 // Background
 .bg-gradiant {
     background-color: linear-gradient(272.18deg, #FCD42A -52.03%, #0051E3 -23.7%, #065CEB -3.92%, #EF5526 51.13%, #FEEA46 103.54%);

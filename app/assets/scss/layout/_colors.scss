@@ -1,3 +1,16 @@
 /*--------------------------------------------------------------
 #2.1 Theme Colors
 --------------------------------------------------------------*/
+.text-primary {
+    color: $primaryColor !important;
+}
+
+.text-primary-hover {
+    &:hover {
+        color: $primaryColor !important;
+    }
+}
+
+.text-gray-2{
+    color: $gray2 !important;
+}
