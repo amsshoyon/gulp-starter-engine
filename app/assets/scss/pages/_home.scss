@@ -8,6 +8,25 @@
     &.banner-lg {
         min-height: 70vh;
     }
+
+    &.banner-sm{
+        min-height: 387px;
+    }
+}
+
+.section-title {
+    max-width: 768px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-card{
+    .icon {
+        height: 78px;
+        display: flex;
+        align-items: flex-end;
+    }
 }
 
 .product-card{
