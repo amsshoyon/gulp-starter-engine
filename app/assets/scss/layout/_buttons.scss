@@ -30,6 +30,12 @@
     &:hover{
     }
 
+    &.btn-lg{
+        min-height: 68px;
+        padding-left: 82px;
+        padding-right: 82px;
+    }
+
     &.btn-sm {
         min-height: 42px;
         font-size: rem(16);

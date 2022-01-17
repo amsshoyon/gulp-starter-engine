@@ -29,6 +29,10 @@ h6 {
     font-size: rem(48);
 }
 
+.fs-42 {
+    font-size: rem(42);
+}
+
 .fs-24 {
     font-size: rem(24);
 }
@@ -67,4 +71,8 @@ h6 {
 // Line height
 .lh-1 {
     line-height: 1 !important;
+}
+
+.letter-spacing-1{
+    letter-spacing: 0.18em;
 }

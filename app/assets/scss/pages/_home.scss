@@ -1,0 +1,21 @@
+.banner{
+    padding: 72px 0;
+    min-height: 550px;
+    .container {
+        max-width: 768px;
+    }
+
+    &.banner-lg {
+        min-height: 70vh;
+    }
+}
+
+.product-card{
+    position: relative;
+    .content {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 24px;
+    }
+}
