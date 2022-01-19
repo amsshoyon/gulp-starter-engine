@@ -38,11 +38,16 @@ ol, ul {
 }
 
 .flex-img {
-    display: flex;
+    display: flex !important;
     img{
+        width: 100%;
         object-fit: cover;
         object-position: center;
     }
+}
+
+.radius-4{
+    border-radius: 4px !important;
 }
 
 main {
@@ -143,7 +148,9 @@ main {
 }
 
 .slick-slider{
-    margin-bottom: 85px;
+    &.slider-dotted{
+        margin-bottom: 85px;
+    }
     .slick-arrow{
         transition: .3s ease-in-out;
         position: absolute;
@@ -185,6 +192,14 @@ main {
             button{
                 display: none;
             }
+        }
+    }
+}
+
+.stars{
+    &.stars-sm{
+        img{
+            width: 22px;
         }
     }
 }

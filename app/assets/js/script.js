@@ -110,6 +110,25 @@
         }
     }
 
+    function productSlider() {
+        if($('.product-images').length){
+            $('.product-images').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.product-thumbs'
+            });
+            $('.product-thumbs').slick({
+                slidesToShow: 4,
+                slidesToScroll: 2,
+                asNavFor: '.product-images',
+                dots: false,
+                arrows: false,
+            });
+        }
+    }
+
     /*==========================================================================
         WHEN DOCUMENT LOADING
     ==========================================================================*/
@@ -118,6 +137,7 @@
         goTop();
         dropdown();
         reviewSlider();
+        productSlider();
         
         // Call it to bottom
         pageLoader();
