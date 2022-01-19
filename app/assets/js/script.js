@@ -7,46 +7,6 @@
     /*==========================================================================
         :: All Essential Functions
     ==========================================================================*/
-    function inputAnimate() {
-        if ($('.form-control').length) {
-
-            // Check if has value
-            $('.form-control').each(function () {
-                if ($(this).val()) {
-                    $(this).parents(".form-group").addClass('focus');
-                }
-            })
-
-            // Events
-            $('.form-control').focus(function () {
-                $(this).parents(".form-group").addClass('focus');
-            });
-
-            $('.form-label').on('click', function () {
-                $(this).siblings(".form-control").focus();
-            });
-
-            $(".form-control").focusout(function () {
-                if ($(this).val() == '' || $(this).val() == null) {
-                    $(this).parents(".form-group").removeClass('focus');
-                };
-            });
-
-            $(".form-control").on('change keyup paste', function (e) {
-                // alert($(this).val());
-                if ($(this).val()) {
-                    $(this).parents(".form-group").addClass('focus');
-                }
-                // if ($(this).val() == '' || $(this).val() == null) {
-                //     $(this).parents(".form-group").addClass('error');
-                // } else {
-                //     $(this).parents(".form-group").removeClass('error');
-                //     $(this).parents(".form-group").addClass('focus');
-                // }
-            });
-        }
-    }
-
     function menuHide() {
         $('main').removeClass('overlay');
         $('.menu-toggler').removeClass('show');
@@ -124,24 +84,40 @@
         }
     }
 
-    function featuredHover (){
-        let el = $('.featured-item');
-        el.on("mouseover", function () {
-            el.removeClass('active');
-            $(this).addClass('active')
-        });
+    function reviewSlider() {
+        let slider = $('.review-slider');
+        if (slider.length) {
+            slider.slick({
+                dots: true,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 2,
+                prevArrow:"<img class='slick-arrow slick-prev' src='assets/images/icons/arrow-left.svg'>",
+                nextArrow:"<img class='slick-arrow slick-next' src='assets/images/icons/arrow-right.svg'>",
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    }
+                ]
+            });
+        }
     }
-
 
     /*==========================================================================
         WHEN DOCUMENT LOADING
     ==========================================================================*/
     $(window).on('load', function () {
         menuToggler();
-        inputAnimate();
         goTop();
         dropdown();
-        featuredHover();
+        reviewSlider();
         
         // Call it to bottom
         pageLoader();

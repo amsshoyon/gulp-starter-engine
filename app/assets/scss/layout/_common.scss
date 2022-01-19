@@ -141,3 +141,50 @@ main {
         filter: blur(1px);
     }
 }
+
+.slick-slider{
+    margin-bottom: 85px;
+    .slick-arrow{
+        transition: .3s ease-in-out;
+        position: absolute;
+        top: 50%;
+        z-index: 9;
+        cursor: pointer;
+        &.slick-disabled{
+            opacity: .4;
+            cursor: not-allowed;
+        }
+        &.slick-prev{
+            left: -5px;
+            transform: translate(-100% ,-50%);
+    
+        }
+        &.slick-next{
+            right: -5px;
+            transform: translate(100% ,-50%);
+        }
+    }
+    .slick-dots {
+        position: absolute;
+        display: flex;
+        list-style: none;
+        bottom: -48px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-left: 0;
+        li {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #4F4F4F;
+            border-radius: 50%;
+            margin: 0 16px;
+            cursor: pointer;
+            &.slick-active{
+                background-color: #4F4F4F;
+            }
+            button{
+                display: none;
+            }
+        }
+    }
+}
