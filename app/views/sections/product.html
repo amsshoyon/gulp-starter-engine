@@ -1,12 +1,13 @@
 <section class="product-main mb-2">
     <div class="container">
         <div class="row">
-            <div class="col-md-7"> 
+            <div class="col-md-7">
                 <div class="product-media pe-md-4">
                     <div class="product-images mb-3">
                         {% for i in range(0, 8) %}
                         <div class="item flex-img" style="max-height: 450px;">
-                            <img class="w-100" src="https://via.placeholder.com/600x600" alt="{{ featured_image.alt | escape }}">
+                            <img class="w-100" src="https://via.placeholder.com/600x600"
+                                alt="{{ featured_image.alt | escape }}">
                         </div>
                         {% endfor %}
                     </div>
@@ -22,86 +23,87 @@
             </div>
             <div class="col-md-5">
                 <h2 class="fs-32 fw-700 font-title mb-2">Platinum Mattress</h1>
-                <p class="text-gray-2 mb-2">Our flagship hybrid innerspring mattress</p>
-                <div class="d-flex align-items-center mb-2">
-                    <div class="stars stars-sm d-flex me-2">
-                        <img src="assets/images/icons/star.svg" alt="">
-                        <img src="assets/images/icons/star.svg" alt="">
-                        <img src="assets/images/icons/star.svg" alt="">
-                        <img src="assets/images/icons/star.svg" alt="">
-                        <img src="assets/images/icons/star.svg" alt="">
+                    <p class="text-gray-2 mb-2">Our flagship hybrid innerspring mattress</p>
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="stars stars-sm d-flex me-2">
+                            <img src="assets/images/icons/star.svg" alt="">
+                            <img src="assets/images/icons/star.svg" alt="">
+                            <img src="assets/images/icons/star.svg" alt="">
+                            <img src="assets/images/icons/star.svg" alt="">
+                            <img src="assets/images/icons/star.svg" alt="">
+                        </div>
+                        <span>(4.9)</span>
                     </div>
-                    <span>(4.9)</span>
-                </div>
-                <h3 class="fs-32 fw-700 mb-3">$1,574</h3>
+                    <h3 class="fs-32 fw-700 mb-3">$1,574</h3>
 
-                <form action="/cart/add" method="post" enctype="multipart/form-data" class="AddToCartForm">
-                    <div class="select-field mb-2">
-                        <p class="d-flex justify-content-between mb-2">
-                            SELECT SIZE	
-                            <a href="" class="text-primary text-underline">Specs</a>
-                        </p>
-                        <div class="row row-cols-3 mx-n2">
-                            <div class="col mb-3 px-2">
-                                <div class="radio-button">
-                                    <input type="radio" name="size" value="Single" id="size-1">
-                                    <label for="size-1">Single </label>
+                    <form action="/cart/add" method="post" enctype="multipart/form-data" class="AddToCartForm">
+                        <div class="select-field mb-2">
+                            <p class="d-flex justify-content-between mb-2">
+                                SELECT SIZE
+                                <a href="" class="text-primary text-underline">Specs</a>
+                            </p>
+                            <div class="row row-cols-3 mx-n2">
+                                <div class="col mb-3 px-2">
+                                    <div class="radio-button">
+                                        <input type="radio" name="size" value="Single" id="size-1">
+                                        <label for="size-1">Single </label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col mb-3 px-2">
-                                <div class="radio-button">
-                                    <input type="radio" name="size" value="Single" id="size-2">
-                                    <label for="size-2">King Single  </label>
+                                <div class="col mb-3 px-2">
+                                    <div class="radio-button">
+                                        <input type="radio" name="size" value="Single" id="size-2">
+                                        <label for="size-2">King Single </label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col mb-3 px-2">
-                                <div class="radio-button">
-                                    <input type="radio" name="size" value="Single" id="size-3">
-                                    <label for="size-3">Double  </label>
+                                <div class="col mb-3 px-2">
+                                    <div class="radio-button">
+                                        <input type="radio" name="size" value="Single" id="size-3">
+                                        <label for="size-3">Double </label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col mb-3 px-2">
-                                <div class="radio-button">
-                                    <input type="radio" name="size" value="Single" id="size-4">
-                                    <label for="size-4">Queen  </label>
+                                <div class="col mb-3 px-2">
+                                    <div class="radio-button">
+                                        <input type="radio" name="size" value="Single" id="size-4">
+                                        <label for="size-4">Queen </label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col mb-3 px-2">
-                                <div class="radio-button">
-                                    <input type="radio" name="size" value="Single" id="size-5">
-                                    <label for="size-5">King  </label>
+                                <div class="col mb-3 px-2">
+                                    <div class="radio-button">
+                                        <input type="radio" name="size" value="Single" id="size-5">
+                                        <label for="size-5">King </label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col mb-3 px-2">
-                                <div class="radio-button">
-                                    <input type="radio" name="size" value="Single" id="size-6">
-                                    <label for="size-6">Super King  </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="select-field mb-3">
-                        <p class="d-flex justify-content-between mb-2">
-                            SELECT COMFORT LEVEL
-                            <a href="" class="text-primary text-underline">Learn more</a>
-                        </p>
-                        <div class="row row-cols-3 mx-n2">
-                            <div class="col mb-3 px-2">
-                                <div class="radio-button">
-                                    <input type="radio" name="size" value="Single" id="comfort-1">
-                                    <label for="comfort-1">Luxury Medium</label>
-                                </div>
-                            </div>
-                            <div class="col mb-3 px-2">
-                                <div class="radio-button">
-                                    <input type="radio" name="size" value="Single" id="comfort-2">
-                                    <label for="comfort-2">Firm</label>
+                                <div class="col mb-3 px-2">
+                                    <div class="radio-button">
+                                        <input type="radio" name="size" value="Single" id="size-6">
+                                        <label for="size-6">Super King </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <button type="submit" name="add" id="AddToCart" class="btn btn-lg btn-primary w-100 fs-22 radius-4">Add to cart</button>
-                </form>
+                        <div class="select-field mb-3">
+                            <p class="d-flex justify-content-between mb-2">
+                                SELECT COMFORT LEVEL
+                                <a href="" class="text-primary text-underline">Learn more</a>
+                            </p>
+                            <div class="row row-cols-3 mx-n2">
+                                <div class="col mb-3 px-2">
+                                    <div class="radio-button">
+                                        <input type="radio" name="size" value="Single" id="comfort-1">
+                                        <label for="comfort-1">Luxury Medium</label>
+                                    </div>
+                                </div>
+                                <div class="col mb-3 px-2">
+                                    <div class="radio-button">
+                                        <input type="radio" name="size" value="Single" id="comfort-2">
+                                        <label for="comfort-2">Firm</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" name="add" id="AddToCart"
+                            class="btn btn-lg btn-primary w-100 fs-22 radius-4">Add to cart</button>
+                    </form>
             </div>
         </div>
     </div>
@@ -141,7 +143,7 @@
                             <div class="icon icon-same-height mb-4">
                                 <img src="assets/images/content/11.png" alt="">
                             </div>
-                            <p class="text-gray-2">  Handmade in Australia</p>
+                            <p class="text-gray-2"> Handmade in Australia</p>
                         </div>
                     </div>
                 </div>
@@ -184,19 +186,24 @@
         <div class="container">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#overview" type="button">OVERVIEW</button>
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#overview"
+                        type="button">OVERVIEW</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile" type="button">BENEFITS</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile"
+                        type="button">BENEFITS</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact" type="button">LAYERS</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact"
+                        type="button">LAYERS</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact" type="button">COMFORT</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact"
+                        type="button">COMFORT</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact" type="button">REVIEWS</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact"
+                        type="button">REVIEWS</button>
                 </li>
                 <li class="nav-item">
                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact" type="button">SPECS</button>
@@ -204,7 +211,7 @@
                 <li class="nav-item">
                     <button class="btn rounded-pill bg-dark text-white" type="button">CHOOSE MATTRESS SIZE </button>
                 </li>
-               
+
             </ul>
         </div>
         <div class="tab-content">
@@ -215,8 +222,9 @@
                     </div>
                     <div class="content py-lg">
                         <div class="container h-100 d-flex flex-column justify-content-between text-light font-title">
-                            <h3 class="fs-42 fw-700 text-center">Your best sleep awaits you on our <br> flagship ultra-premium mattress</h3>
-    
+                            <h3 class="fs-42 fw-700 text-center">Your best sleep awaits you on our <br> flagship
+                                ultra-premium mattress</h3>
+
                             <div class="d-flex w-100 justify-content-center">
                                 <p class="fs-34 fw-700 text-center">Extra responsive feel of a <br> dual innerspring</p>
                                 <p class="fs-34 fw-700 mx-5">+</p>
@@ -236,40 +244,48 @@
     <div class="container">
         <div class="row row-cols-4">
             <div class="col">
-                <div class="feature-card d-flex flex-column align-items-center px-md-4 text-center bg-light-2 py-5 px-3 h-100">
+                <div
+                    class="feature-card d-flex flex-column align-items-center px-md-4 text-center bg-light-2 py-5 px-3 h-100">
                     <div class="icon mb-4">
                         <img src="assets/images/content/17.png" alt="">
                     </div>
                     <h3 class="fs-18 fw-600 mb-3 font-title">LUXURIOUS</h3>
-                    <p class="text-gray-2">The plush, cushiony comfort and pressure-point relief of our 10cm pillow top comes standard. Two firmness levels to choose from.</p>
+                    <p class="text-gray-2">The plush, cushiony comfort and pressure-point relief of our 10cm pillow top
+                        comes standard. Two firmness levels to choose from.</p>
                 </div>
             </div>
             <div class="col">
-                <div class="feature-card d-flex flex-column align-items-center px-md-4 text-center bg-light-2 py-5 px-3 h-100">
+                <div
+                    class="feature-card d-flex flex-column align-items-center px-md-4 text-center bg-light-2 py-5 px-3 h-100">
                     <div class="icon mb-4">
                         <img src="assets/images/content/18.png" alt="">
                     </div>
                     <h3 class="fs-18 fw-600 mb-3 font-title">DURABLE</h3>
-                    <p class="text-gray-2"> Say goodbye to sagging with our responsive dual-spring design made of recycled carbon steel that's tempered three times for superb durability. </p>
+                    <p class="text-gray-2"> Say goodbye to sagging with our responsive dual-spring design made of
+                        recycled carbon steel that's tempered three times for superb durability. </p>
                 </div>
             </div>
             <div class="col">
-                <div class="feature-card d-flex flex-column align-items-center px-md-4 text-center bg-light-2 py-5 px-3 h-100">
+                <div
+                    class="feature-card d-flex flex-column align-items-center px-md-4 text-center bg-light-2 py-5 px-3 h-100">
                     <div class="icon mb-4">
                         <img src="assets/images/content/19.png" alt="">
                     </div>
                     <h3 class="fs-18 fw-600 mb-3 font-title">SUPPORTIVE</h3>
-                    <p class="text-gray-2">Get healthy spinal alignment in any sleep position with our 5 zone support system and high-density gel-infused 
+                    <p class="text-gray-2">Get healthy spinal alignment in any sleep position with our 5 zone support
+                        system and high-density gel-infused
                         memory foam.</p>
                 </div>
             </div>
             <div class="col">
-                <div class="feature-card d-flex flex-column align-items-center px-md-4 text-center bg-light-2 py-5 px-3 h-100">
+                <div
+                    class="feature-card d-flex flex-column align-items-center px-md-4 text-center bg-light-2 py-5 px-3 h-100">
                     <div class="icon mb-4">
                         <img src="assets/images/content/20.png" alt="">
                     </div>
                     <h3 class="fs-18 fw-600 mb-3 font-title">BREATHABLE</h3>
-                    <p class="text-gray-2"> Sleep cooler with our naturally breathable bamboo cover and dual-spring design that allows more airflow to the  help
+                    <p class="text-gray-2"> Sleep cooler with our naturally breathable bamboo cover and dual-spring
+                        design that allows more airflow to the help
                         disperse body heat.</p>
                 </div>
             </div>
@@ -281,7 +297,9 @@
     <div class="container">
         <div class="section-title title-md text-center mb-sm">
             <h3 class="fs-42 fw-700 font-title mb-4">The Ultimate in Comfort and Luxury</h3>
-            <p class="fs-22 text-gray-2">Our Luxara Platinum hybrid innerspring mattress blends the durability and support of a dual innerspring system with the finest eco-friendly foams and the cushioned comfort of our plush pillow top for the ultimate luxury feel.</p>
+            <p class="fs-22 text-gray-2">Our Luxara Platinum hybrid innerspring mattress blends the durability and
+                support of a dual innerspring system with the finest eco-friendly foams and the cushioned comfort of our
+                plush pillow top for the ultimate luxury feel.</p>
         </div>
         <div class="row row-cols-3">
             <div class="col">
@@ -290,7 +308,8 @@
                         <img src="assets/images/content/21.png" alt="">
                     </div>
                     <h3 class="fs-18 fw-600 mb-3">Healthier Sleep</h3>
-                    <p class="text-gray-2">Hypoallergenic, antimicrobial bamboo cover, GECA and Sensitive Choice® approved foams, and Ultra-Fresh™ protection for a fresh and healthy sleep</p>
+                    <p class="text-gray-2">Hypoallergenic, antimicrobial bamboo cover, GECA and Sensitive Choice®
+                        approved foams, and Ultra-Fresh™ protection for a fresh and healthy sleep</p>
                 </div>
             </div>
             <div class="col">
@@ -299,7 +318,8 @@
                         <img src="assets/images/content/22.png" alt="">
                     </div>
                     <h3 class="fs-18 fw-600 mb-3">Not a mattress in a box</h3>
-                    <p class="text-gray-2">Made to order with superior durability, comfort and support that you just can't get in a bed-in-a-box</p>
+                    <p class="text-gray-2">Made to order with superior durability, comfort and support that you just
+                        can't get in a bed-in-a-box</p>
                 </div>
             </div>
             <div class="col">
@@ -320,7 +340,8 @@
     <div class="container mt-nlg bg-white pt-5">
         <div class="section-title title-sm text-center mb-sm">
             <h3 class="fs-42 fw-700 font-title mb-4">Engineered for back health</h3>
-            <p class="fs-22 text-gray-2">We pay special attention to back-relieving technologies to ensure relief from back and neck pain for a supportive and comfortable nights sleep</p>
+            <p class="fs-22 text-gray-2">We pay special attention to back-relieving technologies to ensure relief from
+                back and neck pain for a supportive and comfortable nights sleep</p>
         </div>
         <div class="row row-cols-3">
             <div class="col mb-5">
@@ -329,7 +350,8 @@
                         <img src="assets/images/content/24.png" alt="">
                     </div>
                     <h3 class="fs-18 fw-600 mb-3">Relief for achy backs and joints</h3>
-                    <p class="text-gray-2"> Our plush pillow top delivers contouring and cushioning support to the back, hips and shoulders, relieving pressure where it’s needed most.</p>
+                    <p class="text-gray-2"> Our plush pillow top delivers contouring and cushioning support to the back,
+                        hips and shoulders, relieving pressure where it’s needed most.</p>
                 </div>
             </div>
             <div class="col mb-5">
@@ -338,7 +360,8 @@
                         <img src="assets/images/content/25.png" alt="">
                     </div>
                     <h3 class="fs-18 fw-600 mb-3">Optimal spine support</h3>
-                    <p class="text-gray-2"> Our mattresses are designed with a 5-Zone Pocket Spring support system, for optimal spinal alignment no matter how you sleep.</p>
+                    <p class="text-gray-2"> Our mattresses are designed with a 5-Zone Pocket Spring support system, for
+                        optimal spinal alignment no matter how you sleep.</p>
                 </div>
             </div>
             <div class="col mb-5">
@@ -347,7 +370,161 @@
                         <img src="assets/images/content/26.png" alt="">
                     </div>
                     <h3 class="fs-18 fw-600 mb-3">Triple-Tempered Steel Springs</h3>
-                    <p class="text-gray-2">Our inner springs are triple-tempered for maximum strength and a long-lasting mattress that won’t sag overtime.</p>
+                    <p class="text-gray-2">Our inner springs are triple-tempered for maximum strength and a long-lasting
+                        mattress that won’t sag overtime.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-lg">
+    <div class="banner banner-sm bg" style="background-image: url(https://via.placeholder.com/1440x387);"></div>
+    <div class="container mt-nlg bg-white pt-5">
+        <div class="section-title text-center mb-lg">
+            <h3 class="fs-42 fw-700 font-title">All Luxara Mattresses have</h3>
+        </div>
+        <div class="row row-cols-3">
+            <div class="col mb-5">
+                <div class="feature-card d-flex flex-column align-items-center px-md-5 text-center">
+                    <div class="icon mb-4">
+                        <img src="assets/images/content/5.png" alt="">
+                    </div>
+                    <p class="text-gray-2">100% Bamboo outer cover that is natural, breathable, non-synthetic,
+                        antimicrobial and hypoallergenic</p>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="feature-card d-flex flex-column align-items-center px-md-5 text-center">
+                    <div class="icon mb-4">
+                        <img src="assets/images/content/6.png" alt="">
+                    </div>
+                    <p class="text-gray-2"> Antimicrobial protection that inhibits bacteria for a longer lasting
+                        hygienic mattress</p>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="feature-card d-flex flex-column align-items-center px-md-5 text-center">
+                    <div class="icon mb-4">
+                        <img src="assets/images/content/7.png" alt="">
+                    </div>
+                    <p class="text-gray-2"> Naturally antibacterial and insulating for a fresher and more hygienic sleep
+                    </p>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="feature-card d-flex flex-column align-items-center px-md-5 text-center">
+                    <div class="icon mb-4">
+                        <img src="assets/images/content/8.png" alt="">
+                    </div>
+                    <p class="text-gray-2">GECA ensure materials meet the highest social, ethical, and environmental
+                        standards</p>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="feature-card d-flex flex-column align-items-center px-md-5 text-center">
+                    <div class="icon mb-4">
+                        <img src="assets/images/content/9.png" alt="">
+                    </div>
+                    <p class="text-gray-2"> Eco-friendly, superior quality, Australian made Dunlop foam layers</p>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="feature-card d-flex flex-column align-items-center px-md-5 text-center">
+                    <div class="icon mb-4">
+                        <img src="assets/images/content/10.png" alt="">
+                    </div>
+                    <p class="text-gray-2">Sensitive Choice® approved by National Asthma Council Australia and free from
+                        nasty chemicals</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-lg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item mb-4 border-0">
+                        <h2 class="accordion-header" id="headingOne">
+                            <h4 class="fs-22 fw-600 d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                               <span class="badge rounded-circle bg-dark me-2">1</span> Plush & Breathable Sleep Surface
+                            </h4>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body px-0 text-gray-2">
+                                Contouring pillow top is covered in naturally breathable, hypoallergenic and antimicrobial bamboo to promote cooler, healthier sleep. 
+                                <br>
+                                A layer of Australian wool is specially quilted under the bamboo fabric which is a natural insulator, keeping you cool in summer and warm in winter, allowing for year round comfort.We've also added layers of plush Dunlop Dream Foam that is treated with Ultra-Fresh™ antimicrobial freshness protection to inhibit the growth of bacteria, mould and mildew.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-4 border-0">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <h4 class="fs-22 fw-600 d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                               <span class="badge rounded-circle bg-dark me-2">2</span> LuxGel Memory Foam Support Layer
+                            </h4>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body px-0 text-gray-2">
+                                Contouring pillow top is covered in naturally breathable, hypoallergenic and antimicrobial bamboo to promote cooler, healthier sleep. 
+                                <br>
+                                A layer of Australian wool is specially quilted under the bamboo fabric which is a natural insulator, keeping you cool in summer and warm in winter, allowing for year round comfort.We've also added layers of plush Dunlop Dream Foam that is treated with Ultra-Fresh™ antimicrobial freshness protection to inhibit the growth of bacteria, mould and mildew.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="assets/images/content/matress.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="image d-flex justify-content-center mb-5">
+            <img src="assets/images/comfort-label.svg" alt="">
+        </div>
+        <div class="row row-cols-3 justify-content-center">
+            <div class="col">
+                <div class="comfort-card bg-light-2 py-5 px-4">
+                    <h4 class="fs-22 fw-400 d-flex mb-4 align-items-center">
+                        <span class="me-4">Luxury Medium</span>
+                        <span class="fs-18">6 - 7</span>
+                    </h4>
+                    <p class="text-gray-2 mb-4">Our #1 seller. Designed to replicate the comfort level used in luxury hotels.</p>
+                    <h4 class="fs-22 fw-400 mb-2">Great for:</h4>
+                    <ul class="mb-4">
+                        <li> A perfect balance of comfort and uplifting support</li>
+                        <li> Couples who can’t agree on a firmness level</li>
+                        <li> Every range of sleep positions</li>
+                    </ul>
+                    <div class="video-thumb">
+                        <img class="w-100" src="https://via.placeholder.com/307x179" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="comfort-card bg-light-2 py-5 px-4">
+                    <h4 class="fs-22 fw-400 d-flex mb-4 align-items-center">
+                        <span class="me-4">Luxury Medium</span>
+                        <span class="fs-18">6 - 7</span>
+                    </h4>
+                    <p class="text-gray-2 mb-4">Our #1 seller. Designed to replicate the comfort level used in luxury hotels.</p>
+                    <h4 class="fs-22 fw-400 mb-2">Great for:</h4>
+                    <ul class="mb-4">
+                        <li> A perfect balance of comfort and uplifting support</li>
+                        <li> Couples who can’t agree on a firmness level</li>
+                        <li> Every range of sleep positions</li>
+                    </ul>
+                    <div class="video-thumb">
+                        <img class="w-100" src="https://via.placeholder.com/307x179" alt="">
+                    </div>
                 </div>
             </div>
         </div>

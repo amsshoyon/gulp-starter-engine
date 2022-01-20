@@ -106,3 +106,26 @@
         height: 100%;
     }
 }
+
+.comfort-card{
+    ul{
+        list-style: none;
+        padding-left: 0;
+        li{
+            position: relative;
+            color: $gray2;
+            padding-left: 25px;
+            margin-bottom: 16px;
+            &::before{
+                content: '';
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: $lightGray;
+                position: absolute;
+                left: 0;
+                top: 8px;
+            }
+        }
+    }
+}
