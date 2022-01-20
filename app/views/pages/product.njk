@@ -1,6 +1,10 @@
 {% extends "layouts/layout.njk" %}
 
 {% block content %}
+<main class="preloader">
    {% include 'sections/breadcumbs.html' %}
    {% include 'sections/product.html' %}
+   {% include 'sections/reviews.html' %}
+   {% include 'sections/faq.html' %}
+</main>
 {% endblock %}

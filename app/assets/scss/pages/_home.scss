@@ -129,3 +129,78 @@
         }
     }
 }
+
+.accordion-header{
+    cursor: pointer;
+    .badge{
+        border: 1px solid #6B6257;
+        background-color: #6B6257;
+        color: #fff;
+        border-radius: 50%;
+    }
+    &.collapsed .badge{
+        color: #6B6257;
+        background-color: transparent;
+    }
+}
+
+.comparison-table{
+    overflow: hidden;
+    .title{
+        position: relative;
+        display: block;
+        width: 100%;
+        &:before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #E0E0E0;
+            top: 50%;
+            left: 0;
+        }
+        span{
+            display: block;
+            position: relative;
+            z-index: 2;
+            max-width: 310px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.accordion#faq{
+    max-width: 800px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    .accordion-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &.collapsed{
+            span:after{
+                transform: rotate(90deg);
+            }
+        }
+        span{
+            position: relative;
+            margin-right: 30px;
+            &:before, &:after{
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 2px;
+                background-color: #080E2F;
+                top: 0;
+                left: 0;
+                transition: .3s ease-in-out;
+            }
+            &:after{
+                transform: rotate(0deg);
+            }
+        }
+    }
+}

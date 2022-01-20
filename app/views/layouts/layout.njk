@@ -12,16 +12,14 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body class="{{ page }}">
 	<!--[if IE]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 
 	{% include 'layouts/header.html' %}
 
-	<main class="preloader">
-		{% block content %}{% endblock %}
-	</main>
+	{% block content %}{% endblock %}
 
 	{% include "layouts/footer.html" %}
 
